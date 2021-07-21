@@ -4,6 +4,10 @@ import android.os.Bundle
 import android.view.*
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.Fragment
+import ru.profsoft.testappschool.ui.MainActivity
+import ru.profsoft.testappschool.viewModel.base.BaseViewModel
+import ru.profsoft.testappschool.viewModel.base.IViewModelState
+import ru.profsoft.testappschool.viewModel.base.Loading
 
 abstract class BaseFragment<T : BaseViewModel<out IViewModelState>> : Fragment() {
     @VisibleForTesting(otherwise = VisibleForTesting.NONE)
@@ -13,14 +17,7 @@ abstract class BaseFragment<T : BaseViewModel<out IViewModelState>> : Fragment()
     protected abstract val viewModel: T
     protected abstract val layout: Int
 
-    open val prepareToolbar: (ToolbarBuilder.() -> Unit)? = null
     open val prepareBottombar: (BottombarBuilder.() -> Unit)? = null
-
-    open val onCallbackReceived: OnCallbackReceived
-        get() = main
-
-    open val toolbar
-        get() = main.toolbar
 
     abstract fun setupViews()
 
@@ -52,12 +49,6 @@ abstract class BaseFragment<T : BaseViewModel<out IViewModelState>> : Fragment()
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
 
-        //prepare toolbar
-        main.toolbarBuilder
-            .invalidate()
-            .prepare(prepareToolbar)
-            .build(main)
-
         main.bottombarBuilder
             .invalidate()
             .prepare(prepareBottombar)
@@ -68,24 +59,6 @@ abstract class BaseFragment<T : BaseViewModel<out IViewModelState>> : Fragment()
         viewModel.saveState()
         binding?.saveUi(outState)
         super.onSaveInstanceState(outState)
-    }
-
-    override fun onPrepareOptionsMenu(menu: Menu) {
-        if(main.toolbarBuilder.items.isNotEmpty()) {
-            for((index, menuHolder) in main.toolbarBuilder.items.withIndex()) {
-                val item = menu.add(0, menuHolder.menuId, index, menuHolder.title)
-                item.setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_ALWAYS or MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW)
-                    .setOnMenuItemClickListener {
-                        menuHolder.clickListener?.invoke(it)?.let { true } ?: false
-                    }
-                val currentIcon = menuHolder.icon
-                if (currentIcon != null)
-                    item.setIcon(currentIcon)
-                item.isVisible = menuHolder.visible
-                if(menuHolder.actionViewLayout != null) item.setActionView(menuHolder.actionViewLayout)
-            }
-        } else menu.clear()
-        super.onPrepareOptionsMenu(menu)
     }
 
     open fun renderLoading(loadingState: Loading){
