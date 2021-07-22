@@ -56,14 +56,14 @@ abstract class BaseViewModel<T : IViewModelState>(
         compHandler: ((Throwable?) -> Unit)? = null,
         block: suspend CoroutineScope.() -> Unit
     ) {
-        val errHand = CoroutineExceptionHandler { _, err ->
+        /*val errHand = CoroutineExceptionHandler { _, err ->
             Timber.e(err)
             errHandler?.invoke(err) ?: when (err) {
 
             }
-        }
+        }*/
 
-        (viewModelScope + errHand).launch {
+        (viewModelScope).launch {
             showLoading()
             block()
         }.invokeOnCompletion {

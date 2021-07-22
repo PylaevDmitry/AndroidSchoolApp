@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import ru.profsoft.testappschool.R
 import ru.profsoft.testappschool.databinding.MainFragmentBinding
 import ru.profsoft.testappschool.viewModel.MainViewModel
