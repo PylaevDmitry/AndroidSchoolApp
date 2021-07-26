@@ -5,6 +5,9 @@ import dagger.BindsInstance
 import dagger.Component
 import ru.profsoft.testappschool.app.App
 import ru.profsoft.testappschool.app.di.module.AppModule
+import ru.profsoft.testappschool.ui.MainActivity
+import ru.profsoft.testappschool.ui.auth.AuthFragment
+import ru.profsoft.testappschool.ui.auth.AuthMainFragment
 import javax.inject.Singleton
 
 @Singleton
@@ -27,5 +30,9 @@ interface AppComponent {
     interface ComponentProvider {
         val appComponent: AppComponent
     }
+
+    fun inject(activity:MainActivity)
+    fun inject(fragment:AuthMainFragment)
+    fun inject(fragment: AuthFragment)
 
 }

@@ -4,6 +4,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import ru.profsoft.testappschool.R
+import ru.profsoft.testappschool.app.App
 import ru.profsoft.testappschool.ui.base.BaseActivity
 import ru.profsoft.testappschool.viewModel.MainViewModel
 import ru.profsoft.testappschool.viewModel.MainViewModelFactory
@@ -13,6 +14,10 @@ import ru.profsoft.testappschool.viewModel.base.SavedStateViewModelFactory
 import javax.inject.Inject
 
 class MainActivity : BaseActivity<MainViewModel>() {
+
+    init {
+        App.INSTANCE.appComponent.inject(this@MainActivity)
+    }
 
     @Inject
     lateinit var mainViewModelFactory: MainViewModelFactory
@@ -24,7 +29,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
     override val layout: Int = R.layout.main_activity
 
     override fun subscribeOnState(state: IViewModelState) {
-        TODO("Not yet implemented")
+        //TODO("Not yet implemented")
     }
 
     override fun renderNotification(notify: Notify) {

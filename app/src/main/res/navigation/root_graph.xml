@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/root_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_graph"
+    app:startDestination="@id/authMainFragment">
+
+    <fragment
+        android:id="@+id/authMainFragment"
+        android:name="ru.profsoft.testappschool.ui.auth.AuthMainFragment"
+        tools:layout="@layout/auth_main_fragment">
+        <action
+            android:id="@+id/action_authMainFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="ru.profsoft.testappschool.ui.auth.AuthFragment"
+        tools:layout="@layout/auth_fragment"
+        />
 
 </navigation>
