@@ -23,11 +23,6 @@ class AuthViewModel(
         navigate(NavigationCommand.To(R.id.action_authMainFragment_to_mainFragment,bundle))
     }
 
-    fun navigateMainToAuthFragment() {
-        val bundle = bundleOf("somekey" to "429489328932")
-        navigate(NavigationCommand.To(R.id.action_mainFragment_to_authFragment,bundle))
-    }
-
     fun navigateBack() {
         navigate(NavigationCommand.Back())
     }

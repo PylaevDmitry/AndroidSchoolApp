@@ -32,14 +32,14 @@
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/passwordTextLayout"
-        >
+        app:layout_constraintBottom_toTopOf="@id/passwordTextLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/loginText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bg_light" />
+            android:background="@drawable/bg_light"
+            android:inputType="textEmailAddress"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -56,8 +56,7 @@
         app:helperTextEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/buttonAuth"
-        >
+        app:layout_constraintBottom_toTopOf="@id/buttonAuth">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordText"

@@ -22,6 +22,7 @@
         android:name="ru.profsoft.testappschool.ui.auth.AuthFragment"
         tools:layout="@layout/auth_fragment"
         />
+
     <fragment
         android:id="@+id/mainFragment"
         android:name="ru.profsoft.testappschool.ui.main.MainFragment"
