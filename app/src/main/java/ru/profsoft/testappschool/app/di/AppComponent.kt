@@ -8,6 +8,7 @@ import ru.profsoft.testappschool.app.di.module.AppModule
 import ru.profsoft.testappschool.ui.MainActivity
 import ru.profsoft.testappschool.ui.auth.AuthFragment
 import ru.profsoft.testappschool.ui.auth.AuthMainFragment
+import ru.profsoft.testappschool.ui.main.MainFragment
 import javax.inject.Singleton
 
 @Singleton
@@ -34,5 +35,6 @@ interface AppComponent {
     fun inject(activity:MainActivity)
     fun inject(fragment:AuthMainFragment)
     fun inject(fragment: AuthFragment)
+    fun inject(fragment: MainFragment)
 
 }

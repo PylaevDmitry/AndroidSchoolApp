@@ -14,18 +14,18 @@ class MainViewModel(
 
     private val privateRoutes = listOf(R.id.bottom_navigate)
 
-    override fun navigate(navigationCommand: NavigationCommand) {
-        when (navigationCommand) {
-            is NavigationCommand.To -> {
-                if (privateRoutes.contains(navigationCommand.destination)) {
-                    super.navigate(NavigationCommand.StartLogin(navigationCommand.destination))
-                } else {
-                    super.navigate(navigationCommand)
-                }
-            }
-            else -> super.navigate(navigationCommand)
-        }
-    }
+//    override fun navigate(navigationCommand: NavigationCommand) {
+//        when (navigationCommand) {
+//            is NavigationCommand.To -> {
+//                if (privateRoutes.contains(navigationCommand.destination)) {
+//                    super.navigate(NavigationCommand.StartLogin(navigationCommand.destination))
+//                } else {
+//                    super.navigate(navigationCommand)
+//                }
+//            }
+//            else -> super.navigate(navigationCommand)
+//        }
+//    }
 }
 
 class MainViewModelFactory @Inject constructor() : IViewModelFactory<MainViewModel> {

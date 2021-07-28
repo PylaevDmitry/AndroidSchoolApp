@@ -38,7 +38,12 @@ class AuthMainFragment : BaseFragment<AuthViewModel>() {
     }
 
     override fun setupViews() {
-        btn_foward.setOnClickListener {
+        buttonEnter1.setOnClickListener {
+            viewModel.navigateToMainFragment()
+            //findNavController().navigate(R.id.action_authMainFragment_to_authFragment)
+        }
+
+        buttonEnter2.setOnClickListener {
             viewModel.navigateToAuthFragment()
             //findNavController().navigate(R.id.action_authMainFragment_to_authFragment)
         }

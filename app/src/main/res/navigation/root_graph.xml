@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_authMainFragment_to_authFragment"
             app:destination="@id/authFragment" />
+        <action
+            android:id="@+id/action_authMainFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
 
     <fragment
@@ -19,5 +22,14 @@
         android:name="ru.profsoft.testappschool.ui.auth.AuthFragment"
         tools:layout="@layout/auth_fragment"
         />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="ru.profsoft.testappschool.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+    </fragment>
 
 </navigation>
