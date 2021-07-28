@@ -9,39 +9,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.main_fragment.*
 import ru.profsoft.testappschool.R
-import ru.profsoft.testappschool.app.App
 import ru.profsoft.testappschool.databinding.MainFragmentBinding
 import ru.profsoft.testappschool.ui.auth.AuthFragment
 import ru.profsoft.testappschool.viewModel.MainViewModel
 import ru.profsoft.testappschool.ui.auth.CustomDialogFragment
-import ru.profsoft.testappschool.ui.base.BaseFragment
-import ru.profsoft.testappschool.viewModel.AuthViewModel
-import ru.profsoft.testappschool.viewModel.AuthViewModelFactory
-import ru.profsoft.testappschool.viewModel.base.SavedStateViewModelFactory
-import javax.inject.Inject
 
-class MainFragment : BaseFragment<AuthViewModel>() {
-    init {
-        App.INSTANCE.appComponent.inject(this@MainFragment)
+class MainFragment : Fragment() {
+
+    companion object {
+        fun newInstance() = MainFragment()
     }
-
-    @Inject
-    lateinit var authViewModelFactory: AuthViewModelFactory
-
-    override val viewModel: AuthViewModel by viewModels {
-        SavedStateViewModelFactory(authViewModelFactory, this)
-    }
-
-//    companion object {
-//        fun newInstance() = MainFragment()
-//    }
 
     private var viewBinding: MainFragmentBinding? = null
-//    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: MainViewModel
 
 
     override fun onCreateView(
@@ -53,34 +35,35 @@ class MainFragment : BaseFragment<AuthViewModel>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewBinding = MainFragmentBinding.bind(view)
+        val viewBinding = MainFragmentBinding.bind(view)
 
-        button.setOnClickListener {
+        viewBinding.button.setOnClickListener {
             val myDialogFragment = CustomDialogFragment()
             val manager = this.parentFragmentManager
             myDialogFragment.show(manager, "myDialog")
         }
 
-        val login = loginText.text
-        val password = passwordText.text
+        val login = viewBinding.loginText.text
+        val password = viewBinding.passwordText.text
         val invalidSymbols = "\\s*(\\s|,|!|;|:|\\.)\\s*".toRegex()
 
-        loginText.setOnClickListener {
+        viewBinding.loginText.setOnClickListener {
             if (login.toString().indexOf('@')==-1 || login.toString().indexOf('@')!=login.toString().lastIndexOf('@') )
-                loginTextLayout.error = "Неверная форма ввода"
-            else buttonAuth.setImageDrawable(resources.getDrawable(R.drawable.button_1))
+                viewBinding.loginTextLayout.error = "Неверная форма ввода"
+            else viewBinding.buttonAuth.setImageDrawable(resources.getDrawable(R.drawable.button_1))
         }
 
-        buttonAuth.setOnClickListener {
-            val message:String
+        var message:String
+
+        viewBinding.buttonAuth.setOnClickListener {
             val loginEnable = (!invalidSymbols.containsMatchIn(password.toString())) && (password!!.length>=6)
             if (loginEnable) {
                 message = "Вы авторизованы, $login"
-                viewModel.navigateMainToAuthFragment()
+                startActivity(Intent(context, AuthFragment::class.java))
             }
             else {
                 message = "Некорректный пароль"
-                passwordTextLayout.error = "Пароль должен быть не менее 6 символов"
+                viewBinding.passwordTextLayout.error = "Пароль должен быть не менее 6 символов"
             }
             Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
 //            viewBinding.errorTextMessage1.text = message
@@ -88,18 +71,14 @@ class MainFragment : BaseFragment<AuthViewModel>() {
         }
     }
 
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        viewBinding = null
-//    }
-//    override fun onActivityCreated(savedInstanceState: Bundle?) {
-//        super.onActivityCreated(savedInstanceState)
-//        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-//    }
 
-    override val layout: Int = R.layout.main_fragment
-
-    override fun setupViews() {
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        viewBinding = null
     }
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+    }
+
 }
