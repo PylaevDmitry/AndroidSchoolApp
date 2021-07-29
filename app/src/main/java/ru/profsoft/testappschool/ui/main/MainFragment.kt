@@ -24,7 +24,7 @@ class MainFragment : BaseFragment<MainViewModel>() {
         App.INSTANCE.appComponent.inject(this@MainFragment)
     }
 
-    private var viewBinding: MainFragmentBinding? = null
+//    private var viewBinding: MainFragmentBinding? = null
 
     @Inject
     lateinit var mainViewModelFactory: MainViewModelFactory
@@ -44,12 +44,12 @@ class MainFragment : BaseFragment<MainViewModel>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewBinding = MainFragmentBinding.bind(view)
+//        viewBinding = MainFragmentBinding.bind(view)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        viewBinding = null
+//        viewBinding = null
     }
 
 //    override fun onActivityCreated(savedInstanceState: Bundle?) {
