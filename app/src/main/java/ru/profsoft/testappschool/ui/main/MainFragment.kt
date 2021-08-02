@@ -62,7 +62,8 @@ class MainFragment : BaseFragment<MainViewModel>() {
         val login = loginText.text
         val password = passwordText.text
         val invalidSymbols = "\\s*(\\s|,|!|;|:|\\.)\\s*".toRegex()
-        var passwordFormatIsCorrect:Boolean
+        var passwordFormatIsCorrect = false
+        var loginFormatIsCorrect = false
 
         button.setOnClickListener {
             val myDialogFragment = CustomDialogFragment()
@@ -72,19 +73,34 @@ class MainFragment : BaseFragment<MainViewModel>() {
 
         loginText.setOnFocusChangeListener { _, hasFocus ->
             if (!hasFocus) {
-                if (login.toString().indexOf('@') == -1 || login.toString().indexOf('@') != login.toString().lastIndexOf('@'))
+                loginFormatIsCorrect = login.toString().indexOf('@') != -1 && login.toString().indexOf('@') == login.toString().lastIndexOf('@')
+                if (!loginFormatIsCorrect) {
                     loginTextLayout.error = "Неверная форма ввода"
+                    buttonAuth.setImageDrawable(resources.getDrawable(R.drawable.button_4))
+                }
                 else {
                     loginTextLayout.error = null
-                    buttonAuth.setImageDrawable(resources.getDrawable(R.drawable.button_1))
+                    if (passwordFormatIsCorrect) buttonAuth.setImageDrawable(resources.getDrawable(R.drawable.button_1))
                 }
             }
         }
 
-        buttonAuth.setOnClickListener {
+        passwordText.setOnClickListener {
             passwordFormatIsCorrect = (!invalidSymbols.containsMatchIn(password.toString())) && (password!!.length>=6)
-            if (passwordFormatIsCorrect) viewModel.navigateMainToAuthFragment()
-            else passwordTextLayout.error = "Пароль короткий или содержит недопустимые символы"
+            if (!passwordFormatIsCorrect) {
+                passwordTextLayout.error = "Пароль короткий или содержит недопустимые символы"
+                buttonAuth.setImageDrawable(resources.getDrawable(R.drawable.button_4))
+            }
+            else {
+                passwordTextLayout.error = null
+                if (loginFormatIsCorrect) buttonAuth.setImageDrawable(resources.getDrawable(R.drawable.button_1))
+            }
+        }
+
+        buttonAuth.setOnClickListener {
+            if (passwordFormatIsCorrect&&loginFormatIsCorrect) viewModel.navigateMainToAuthFragment()
         }
     }
+
+
 }
