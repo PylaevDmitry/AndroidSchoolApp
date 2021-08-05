@@ -1,4 +1,4 @@
 package ru.profsoft.testappschool.data.model
 
-class UserResponse {
-}
+class UserResponse (val profile: String
+)

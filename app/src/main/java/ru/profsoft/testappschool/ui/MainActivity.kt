@@ -1,14 +1,20 @@
 package ru.profsoft.testappschool.ui
 
+import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import kotlinx.android.synthetic.main.main_activity.*
 import ru.profsoft.testappschool.R
 import ru.profsoft.testappschool.app.App
+import ru.profsoft.testappschool.selectDestination
 import ru.profsoft.testappschool.ui.base.BaseActivity
 import ru.profsoft.testappschool.viewModel.MainViewModel
 import ru.profsoft.testappschool.viewModel.MainViewModelFactory
 import ru.profsoft.testappschool.viewModel.base.IViewModelState
+import ru.profsoft.testappschool.viewModel.base.NavigationCommand
 import ru.profsoft.testappschool.viewModel.base.Notify
 import ru.profsoft.testappschool.viewModel.base.SavedStateViewModelFactory
 import javax.inject.Inject
@@ -17,6 +23,30 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
     init {
         App.INSTANCE.appComponent.inject(this@MainActivity)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.mainFragment,
+                R.id.authFragment,
+                R.id.authMainFragment
+            )
+        )
+
+//        setupActionBarWithNavController(navController, appBarConfiguration)
+//
+//        bottom_navigate.setOnNavigationItemSelectedListener {
+//            if (it.itemId != bottom_navigate.selectedItemId) {
+//                viewModel.navigate(NavigationCommand.To(it.itemId))
+//            }
+//            true
+//        }
+//
+//        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+//            bottom_navigate.selectDestination(destination)
+//        }
     }
 
     @Inject
