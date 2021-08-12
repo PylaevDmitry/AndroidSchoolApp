@@ -4,30 +4,12 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-<!--    <TextView-->
-<!--        android:id="@+id/tvName"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"/>-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/ivCourse"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"/>-->
-
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_12dp"
         android:text="Номер сертификата:"
-        android:textColor="@color/grey"
-/>
+        />
 
     <TextView
         android:id="@+id/certNumTextView"
@@ -42,142 +24,151 @@
         android:textStyle="bold"
          />
 
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="@dimen/margin_12dp"-->
-<!--        android:text="Направление подготовки:"-->
-<!--        android:textColor="@color/grey"-->
-<!-- />-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_12dp"
+        android:text="Направление подготовки:"
+        />
 
-<!--    <TextView-->
-<!--        android:id="@+id/courseTextView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="@dimen/margin_5dp"-->
-<!--        android:autofillHints="courseNameTextView"-->
-<!--        android:backgroundTint="@android:color/transparent"-->
-<!--        android:gravity="start|top"-->
-<!--        android:text="courseTextView"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textStyle="bold"/>-->
+    <TextView
+        android:id="@+id/courseTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:autofillHints="courseNameTextView"
+        android:backgroundTint="@android:color/transparent"
+        android:gravity="start|top"
+        android:text="courseTextView"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
 
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="@dimen/margin_12dp"-->
-<!--        android:text="Форма обучения:"-->
-<!--        android:textColor="@color/grey"/>-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_12dp"
+        android:text="Форма обучения:"
+        />
 
-<!--    <TextView-->
-<!--        android:id="@+id/formTextView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="@dimen/margin_5dp"-->
-<!--        android:autofillHints="formTextView"-->
-<!--        android:backgroundTint="@android:color/transparent"-->
-<!--        android:gravity="start|top"-->
-<!--        android:text="formTextView"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textStyle="bold" />-->
+    <TextView
+        android:id="@+id/formTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:autofillHints="formTextView"
+        android:backgroundTint="@android:color/transparent"
+        android:gravity="start|top"
+        android:text="formTextView"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
 
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="@dimen/margin_12dp"-->
-<!--        android:text="Период обучения:"-->
-<!--        android:textColor="@color/grey" />-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_12dp"
+        android:text="Период обучения:"
+        />
 
-<!--    <TextView-->
-<!--        android:id="@+id/periodTextView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="@dimen/margin_5dp"-->
-<!--        android:autofillHints="periodTextView"-->
-<!--        android:backgroundTint="@android:color/transparent"-->
-<!--        android:gravity="start|top"-->
-<!--        android:text="periodTextView"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textStyle="bold" />-->
+    <TextView
+        android:id="@+id/periodTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:autofillHints="periodTextView"
+        android:backgroundTint="@android:color/transparent"
+        android:gravity="start|top"
+        android:text="periodTextView"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
 
-<!--    <ImageButton-->
-<!--        android:id="@+id/expandMoreButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:backgroundTintMode="screen"-->
-<!--        android:src="@drawable/ic_baseline_expand_more_24"-->
-<!--        android:layout_marginLeft="170dp"/>-->
+    <ImageButton
+        android:id="@+id/expandMoreButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTintMode="screen"
+        android:src="@drawable/ic_baseline_expand_more_24"
+        android:layout_marginStart="130dp"
+        />
 
-<!--    <TextView-->
-<!--        android:id="@+id/contentTextView2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="@dimen/margin_12dp"-->
-<!--        android:text="Изучение:"-->
-<!--        android:textColor="@color/grey"-->
-<!--        android:visibility="gone"/>-->
+    <TextView
+        android:id="@+id/contentTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_12dp"
+        android:text="Изучение:"
+        android:visibility="gone"
+        />
 
-<!--    <TextView-->
-<!--        android:id="@+id/contentTextView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="@dimen/margin_5dp"-->
-<!--        android:autofillHints="contentTextView"-->
-<!--        android:backgroundTint="@android:color/transparent"-->
-<!--        android:gravity="start|top"-->
-<!--        android:text="contentTextView"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textStyle="bold"-->
-<!--        android:visibility="gone"/>-->
+    <TextView
+        android:id="@+id/contentTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:autofillHints="contentTextView"
+        android:backgroundTint="@android:color/transparent"
+        android:gravity="start|top"
+        android:text="contentTextView"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:visibility="gone"
+        />
 
-<!--    <TextView-->
-<!--        android:id="@+id/teacherTextView2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="@dimen/margin_12dp"-->
-<!--        android:text="Преподаватель:"-->
-<!--        android:textColor="@color/grey"-->
-<!--        android:visibility="gone"/>-->
+    <TextView
+        android:id="@+id/teacherTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_12dp"
+        android:text="Преподаватель:"
+        android:visibility="gone"
+        />
 
-<!--    <TextView-->
-<!--        android:id="@+id/teacherTextView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="@dimen/margin_5dp"-->
-<!--        android:autofillHints="teacherTextView"-->
-<!--        android:backgroundTint="@android:color/transparent"-->
-<!--        android:gravity="start|top"-->
-<!--        android:text="teacherTextView"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textStyle="bold"-->
-<!--        android:visibility="gone"/>-->
+    <TextView
+        android:id="@+id/teacherTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:autofillHints="teacherTextView"
+        android:backgroundTint="@android:color/transparent"
+        android:gravity="start|top"
+        android:text="teacherTextView"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:visibility="gone"
+        />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/certImage"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="@dimen/margin_12dp"-->
-<!--        android:src="@drawable/certificate"-->
-<!--        android:visibility="gone"/>-->
+    <ImageButton
+        android:id="@+id/certImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_12dp"
+        android:src="@drawable/certificate"
+        android:visibility="gone"
+        />
 
-<!--    <TextView-->
-<!--        android:id="@+id/shareButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/share"-->
-<!--        android:layout_marginTop="@dimen/margin_12dp"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textStyle="bold"-->
-<!--        android:visibility="gone"-->
-<!--        />-->
+    <TextView
+        android:id="@+id/shareButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/share"
+        android:layout_marginTop="@dimen/margin_12dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:visibility="gone"
+        />
 
-<!--    <ImageButton-->
-<!--        android:id="@+id/expandLessButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:backgroundTintMode="screen"-->
-<!--        android:src="@drawable/ic_baseline_expand_less_24"-->
-<!--        android:layout_marginLeft="170dp"-->
-<!--        android:visibility="gone"/>-->
+    <ImageButton
+        android:id="@+id/expandLessButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTintMode="screen"
+        android:src="@drawable/ic_baseline_expand_less_24"
+        android:layout_marginStart="130dp"
+        android:visibility="gone"
+        />
+
+
 
 </LinearLayout>

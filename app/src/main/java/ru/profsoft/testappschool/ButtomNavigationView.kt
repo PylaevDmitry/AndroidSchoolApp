@@ -11,7 +11,7 @@ fun BottomNavigationView.selectDestination(destination: NavDestination) {
     if (item != null)
         item.isChecked = true
     else {
-        this.menu.findItem(R.id.mainFragment).isChecked = true
+        this.menu.findItem(R.id.authMainFragment).isChecked = true
     }
 }
 

@@ -5,16 +5,21 @@ import dagger.BindsInstance
 import dagger.Component
 import ru.profsoft.testappschool.app.App
 import ru.profsoft.testappschool.app.di.module.AppModule
+import ru.profsoft.testappschool.app.di.module.NetworkModule
+import ru.profsoft.testappschool.app.di.module.PreferenceModule
 import ru.profsoft.testappschool.ui.MainActivity
 import ru.profsoft.testappschool.ui.auth.AuthFragment
 import ru.profsoft.testappschool.ui.auth.AuthMainFragment
+import ru.profsoft.testappschool.ui.auth.SearchFragment
 import ru.profsoft.testappschool.ui.main.MainFragment
 import javax.inject.Singleton
 
 @Singleton
 @Component(
     modules = [
-        AppModule::class
+        AppModule::class,
+        NetworkModule::class,
+        PreferenceModule::class
     ]
 )
 interface AppComponent {
@@ -36,5 +41,6 @@ interface AppComponent {
     fun inject(fragment:AuthMainFragment)
     fun inject(fragment: AuthFragment)
     fun inject(fragment: MainFragment)
+    fun inject(fragment: SearchFragment)
 
 }

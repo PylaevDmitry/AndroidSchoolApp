@@ -11,6 +11,7 @@ import ru.profsoft.testappschool.R
 import ru.profsoft.testappschool.app.App
 import ru.profsoft.testappschool.selectDestination
 import ru.profsoft.testappschool.ui.base.BaseActivity
+import ru.profsoft.testappschool.ui.main.MainFragment
 import ru.profsoft.testappschool.viewModel.MainViewModel
 import ru.profsoft.testappschool.viewModel.MainViewModelFactory
 import ru.profsoft.testappschool.viewModel.base.IViewModelState
@@ -27,26 +28,27 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.mainFragment,
-                R.id.authFragment,
-                R.id.authMainFragment
+                R.id.authMainFragment,
+                R.id.searchFragment,
+                R.id.authFragment
             )
         )
 
-//        setupActionBarWithNavController(navController, appBarConfiguration)
-//
-//        bottom_navigate.setOnNavigationItemSelectedListener {
-//            if (it.itemId != bottom_navigate.selectedItemId) {
-//                viewModel.navigate(NavigationCommand.To(it.itemId))
-//            }
-//            true
-//        }
-//
-//        navController.addOnDestinationChangedListener { controller, destination, arguments ->
-//            bottom_navigate.selectDestination(destination)
-//        }
+        setupActionBarWithNavController(navController, appBarConfiguration)
+
+        bottom_navigate.setOnNavigationItemSelectedListener {
+            if (it.itemId != bottom_navigate.selectedItemId) {
+                viewModel.navigate(NavigationCommand.To(it.itemId))
+            }
+            true
+        }
+
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            bottom_navigate.selectDestination(destination)
+        }
     }
 
     @Inject

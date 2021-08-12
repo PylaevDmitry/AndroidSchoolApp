@@ -32,5 +32,9 @@
             android:id="@+id/action_mainFragment_to_authFragment"
             app:destination="@id/authFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="ru.profsoft.testappschool.ui.auth.SearchFragment"
+        android:label="SearchFragment" />
 
 </navigation>

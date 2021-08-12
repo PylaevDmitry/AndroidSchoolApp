@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: "kotlin-kapt"
 apply from: "../versions.gradle"
+def BASE_URL = "BASE_URL"
 
 android {
     compileSdkVersion 30
@@ -22,6 +23,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            buildConfigField "String", BASE_URL, '"http://google.com/"'
         }
     }
     buildFeatures {
