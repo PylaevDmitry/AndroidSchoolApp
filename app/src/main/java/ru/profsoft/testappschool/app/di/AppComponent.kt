@@ -22,6 +22,7 @@ import javax.inject.Singleton
         PreferenceModule::class
     ]
 )
+
 interface AppComponent {
     fun inject(application: App)
 

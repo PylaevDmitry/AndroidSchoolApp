@@ -28,8 +28,8 @@ class MainViewModel(
         }
     }
 
-    fun navigateMainToAuthFragment() {
-        val bundle = bundleOf("somekey" to "429489328932")
+    fun navigateMainToAuthFragment(login:String) {
+        val bundle = bundleOf("email" to login)
         navigate(NavigationCommand.To(R.id.action_mainFragment_to_authFragment,bundle))
     }
 }

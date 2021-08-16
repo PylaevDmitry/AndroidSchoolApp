@@ -3,6 +3,7 @@ package ru.profsoft.testappschool.ui.main
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_course.view.*
@@ -14,7 +15,7 @@ import ru.profsoft.testappschool.ui.auth.ShareProfileDialogFragment
 import ru.profsoft.testappschool.ui.base.BaseFragment
 import ru.profsoft.testappschool.viewModel.AuthViewModel
 
-class CourseAdapter(val courses:List<Course>):RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
+class CourseAdapter(val courses:List<Course>, val fragmentManager: FragmentManager):RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
     override fun onCreateViewHolder(parent:ViewGroup, viewType:Int): CourseAdapter.CourseViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_course, parent, false)
         return CourseViewHolder(view)
@@ -61,9 +62,7 @@ class CourseAdapter(val courses:List<Course>):RecyclerView.Adapter<CourseAdapter
             }
 
             itemView.shareButton.setOnClickListener {
-                val myDialogFragment = ShareProfileDialogFragment()
-                val manager = AuthFragment().parentFragmentManager
-                myDialogFragment.show(manager, "myDialog")
+                fragmentManager.let {ShareProfileDialogFragment().show(fragmentManager, "myDialog")}
             }
         }
     }

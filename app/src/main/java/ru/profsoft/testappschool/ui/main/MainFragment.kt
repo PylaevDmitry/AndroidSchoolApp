@@ -98,23 +98,10 @@ class MainFragment : BaseFragment<MainViewModel>() {
             }
         }
 
-//        val intent = Intent(context, AuthFragment::class.java)
-
-        val bundle = Bundle()
-        val frag = AuthFragment()
-
-
         buttonAuth.setOnClickListener {
             if (password.formatIsCorrect(invalidSymbols, 6)&&login.formatIsCorrect()) {
-//                intent.putExtra("email", login.toString())
-//                startActivity(intent)
-                bundle.putString("email", login.toString())
-                frag.arguments = bundle
-
-                viewModel.navigateMainToAuthFragment()
+                viewModel.navigateMainToAuthFragment(login.toString())
             }
         }
-
     }
-
 }

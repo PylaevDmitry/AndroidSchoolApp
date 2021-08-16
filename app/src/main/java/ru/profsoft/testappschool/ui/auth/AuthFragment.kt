@@ -1,5 +1,7 @@
 package ru.profsoft.testappschool.ui.auth
 
+import android.content.Intent
+import android.net.Uri
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -33,8 +35,7 @@ class AuthFragment:BaseFragment<AuthViewModel>() {
 
     override fun setupViews() {
 
-        emailTextView.text = activity?.intent?.getStringExtra("email")
-//        emailTextView.text = arguments?.getString("email")
+        emailTextView.text = arguments?.getString("email")
 
         photoImageView.setOnClickListener {
             photoEditImageView.visible()
@@ -42,6 +43,9 @@ class AuthFragment:BaseFragment<AuthViewModel>() {
 
         photoEditImageView.setOnClickListener {
             photoEditImageView.visible()
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(
+                "content://media/internal/images/media"))
+            startActivity(intent)
         }
 
         val course1 = Course("№0809-33434-233", "Design1", "очная", "01.07-01.09", "Создание макетов", "Щелкунова Юлия Сергеевна", "im")
@@ -54,7 +58,7 @@ class AuthFragment:BaseFragment<AuthViewModel>() {
 
         val recyclerView: RecyclerView = recyclerView
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = CourseAdapter(list)
+        recyclerView.adapter = CourseAdapter(list, this.parentFragmentManager)
 
     }
 }
