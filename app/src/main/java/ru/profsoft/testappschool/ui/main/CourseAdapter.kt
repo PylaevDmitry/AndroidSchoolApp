@@ -3,19 +3,13 @@ package ru.profsoft.testappschool.ui.main
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_course.view.*
 import ru.profsoft.testappschool.R
 import ru.profsoft.testappschool.app.visible
 import ru.profsoft.testappschool.data.model.Course
-import ru.profsoft.testappschool.ui.auth.AuthFragment
-import ru.profsoft.testappschool.ui.auth.ShareProfileDialogFragment
-import ru.profsoft.testappschool.ui.base.BaseFragment
-import ru.profsoft.testappschool.viewModel.AuthViewModel
 
-class CourseAdapter(val courses:List<Course>, val fragmentManager: FragmentManager):RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
+class CourseAdapter(val courses:List<Course>, val clickListener:()->Unit):RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
     override fun onCreateViewHolder(parent:ViewGroup, viewType:Int): CourseAdapter.CourseViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_course, parent, false)
         return CourseViewHolder(view)
@@ -26,7 +20,6 @@ class CourseAdapter(val courses:List<Course>, val fragmentManager: FragmentManag
     }
 
     override fun getItemCount():Int = courses.size
-
 
     inner class CourseViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind (item: Course) {
@@ -62,7 +55,7 @@ class CourseAdapter(val courses:List<Course>, val fragmentManager: FragmentManag
             }
 
             itemView.shareButton.setOnClickListener {
-                fragmentManager.let {ShareProfileDialogFragment().show(fragmentManager, "myDialog")}
+                clickListener.invoke()
             }
         }
     }

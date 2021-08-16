@@ -2,6 +2,7 @@ package ru.profsoft.testappschool.data.nework.interceptors
 
 import okhttp3.Interceptor
 import okhttp3.Response
+import ru.profsoft.testappschool.exceptions.InterceptorException
 import ru.profsoft.testappschool.data.storage.Pref
 
 class TokenInterceptor (

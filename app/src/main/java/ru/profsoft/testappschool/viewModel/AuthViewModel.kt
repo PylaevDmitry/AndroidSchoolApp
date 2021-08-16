@@ -23,9 +23,9 @@ class AuthViewModel(
         navigate(NavigationCommand.To(R.id.action_authMainFragment_to_mainFragment,bundle))
     }
 
-    fun navigateBack() {
-        navigate(NavigationCommand.Back())
-    }
+//    fun navigateBack() {
+//        navigate(NavigationCommand.Back())
+//    }
 }
 
 class AuthViewModelFactory @Inject constructor() : IViewModelFactory<AuthViewModel> {

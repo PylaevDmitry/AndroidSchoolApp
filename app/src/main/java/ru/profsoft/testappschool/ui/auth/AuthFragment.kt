@@ -1,7 +1,10 @@
 package ru.profsoft.testappschool.ui.auth
 
+import android.R.attr
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +22,17 @@ import ru.profsoft.testappschool.viewModel.AuthViewModel
 import ru.profsoft.testappschool.viewModel.AuthViewModelFactory
 import ru.profsoft.testappschool.viewModel.base.SavedStateViewModelFactory
 import javax.inject.Inject
+import android.provider.MediaStore
+
+import android.R.attr.bitmap
+import android.content.ContentResolver
+import android.graphics.drawable.BitmapDrawable
+import java.io.IOException
+import android.graphics.Bitmap
+
+import android.R.attr.data
+import android.content.Context
+
 
 class AuthFragment:BaseFragment<AuthViewModel>() {
     init {
@@ -43,9 +57,10 @@ class AuthFragment:BaseFragment<AuthViewModel>() {
 
         photoEditImageView.setOnClickListener {
             photoEditImageView.visible()
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(
-                "content://media/internal/images/media"))
-            startActivity(intent)
+//            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(
+//                "content://media/internal/images/media"))
+//            startActivity(intent)
+            openGalleryForImage()
         }
 
         val course1 = Course("№0809-33434-233", "Design1", "очная", "01.07-01.09", "Создание макетов", "Щелкунова Юлия Сергеевна", "im")
@@ -58,7 +73,36 @@ class AuthFragment:BaseFragment<AuthViewModel>() {
 
         val recyclerView: RecyclerView = recyclerView
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = CourseAdapter(list, this.parentFragmentManager)
+        recyclerView.adapter = CourseAdapter(list) {
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, "This is my text to send.")
+                type = "text/plain"
+            }
+
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
+        }
 
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE){
+//            val bitmap = MediaStore.Images.Media.getBitmap(context?.contentResolver, data?.data)
+//            photoImageView.setImageBitmap(bitmap)
+            photoImageView.setImageURI(data?.data)
+        }
+    }
+
+    private fun openGalleryForImage() {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        startActivityForResult(intent, REQUEST_CODE)
+    }
+
+    companion object {
+        private const val REQUEST_CODE = 100
+    }
+
 }

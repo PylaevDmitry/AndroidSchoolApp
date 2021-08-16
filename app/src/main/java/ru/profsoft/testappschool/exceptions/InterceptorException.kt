@@ -1,4 +1,4 @@
-package ru.profsoft.testappschool.data.nework.interceptors
+package ru.profsoft.testappschool.exceptions
 
 class InterceptorException(message:String): IllegalAccessException(message) {
 

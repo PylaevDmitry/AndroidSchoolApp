@@ -1,6 +1,5 @@
 package ru.profsoft.testappschool.viewModel
 
-import androidx.core.os.bundleOf
 import androidx.lifecycle.SavedStateHandle
 import ru.profsoft.testappschool.R
 import ru.profsoft.testappschool.viewModel.base.BaseViewModel
@@ -26,11 +25,6 @@ class MainViewModel(
             }
             else -> super.navigate(navigationCommand)
         }
-    }
-
-    fun navigateMainToAuthFragment(login:String) {
-        val bundle = bundleOf("email" to login)
-        navigate(NavigationCommand.To(R.id.action_mainFragment_to_authFragment,bundle))
     }
 }
 

@@ -1,6 +1,5 @@
 package ru.profsoft.testappschool.ui.main
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
@@ -9,17 +8,14 @@ import kotlinx.android.synthetic.main.main_fragment.*
 import ru.profsoft.testappschool.R
 import ru.profsoft.testappschool.app.App
 import ru.profsoft.testappschool.formatIsCorrect
-import ru.profsoft.testappschool.ui.auth.AuthFragment
-import ru.profsoft.testappschool.viewModel.MainViewModel
 import ru.profsoft.testappschool.ui.auth.ForgotPasswordDialogFragment
 import ru.profsoft.testappschool.ui.base.BaseFragment
-import ru.profsoft.testappschool.viewModel.MainViewModelFactory
+import ru.profsoft.testappschool.viewModel.HomeViewModel
+import ru.profsoft.testappschool.viewModel.HomeViewModelFactory
 import ru.profsoft.testappschool.viewModel.base.SavedStateViewModelFactory
 import javax.inject.Inject
 
-class MainFragment : BaseFragment<MainViewModel>() {
-
-
+class MainFragment : BaseFragment<HomeViewModel>() {
 
     companion object {
         fun newInstance() = MainFragment()
@@ -32,10 +28,10 @@ class MainFragment : BaseFragment<MainViewModel>() {
 //    private var viewBinding: MainFragmentBinding? = null
 
     @Inject
-    lateinit var mainViewModelFactory: MainViewModelFactory
+    lateinit var homeViewModelFactory: HomeViewModelFactory
 
-    override val viewModel: MainViewModel by viewModels {
-        SavedStateViewModelFactory(mainViewModelFactory, this)
+    override val viewModel: HomeViewModel by viewModels {
+        SavedStateViewModelFactory(homeViewModelFactory, this)
     }
 
 //    override fun onCreateView(
@@ -59,7 +55,7 @@ class MainFragment : BaseFragment<MainViewModel>() {
 
 //    override fun onActivityCreated(savedInstanceState: Bundle?) {
 //        super.onActivityCreated(savedInstanceState)
-//        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+//        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 //    }
 
     override fun setupViews() {
@@ -69,9 +65,7 @@ class MainFragment : BaseFragment<MainViewModel>() {
         val invalidSymbols = "\\s*(\\s|,|!|;|:|\\.)\\s*".toRegex()
 
         button.setOnClickListener {
-            val myDialogFragment = ForgotPasswordDialogFragment()
-            val manager = this.parentFragmentManager
-            myDialogFragment.show(manager, "myDialog")
+                ForgotPasswordDialogFragment().show(this.parentFragmentManager, "myDialog")
         }
 
         loginText.setOnFocusChangeListener { _, hasFocus ->
@@ -103,5 +97,6 @@ class MainFragment : BaseFragment<MainViewModel>() {
                 viewModel.navigateMainToAuthFragment(login.toString())
             }
         }
+
     }
 }
