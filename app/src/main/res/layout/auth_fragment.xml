@@ -13,7 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ru.profsoft.testappschool.ui.AvatarImageViewMask
+        <ru.profsoft.testappschool.ui.customViews.AvatarImageViewMask
             android:id="@+id/photoImageView"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -35,7 +35,7 @@
 <!--            app:srcCompat="@drawable/frame_275"-->
 <!--            />-->
 
-        <ru.profsoft.testappschool.ui.AvatarImageViewMask
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/photoEditImageView"
             android:layout_width="150dp"
             android:layout_height="150dp"

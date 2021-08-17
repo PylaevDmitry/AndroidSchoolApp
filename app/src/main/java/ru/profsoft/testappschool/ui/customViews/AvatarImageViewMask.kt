@@ -1,10 +1,11 @@
-package ru.profsoft.testappschool.ui
+package ru.profsoft.testappschool.ui.customViews
 
 import android.content.Context
 import android.graphics.*
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.util.AttributeSet
+import android.util.Log
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.graphics.toRectF
 import ru.profsoft.testappschool.dpToPx
@@ -46,10 +47,24 @@ class AvatarImageViewMask @JvmOverloads constructor(
             bottom = h
         }
         prepareBitmaps(w, h)
+        Log.e("tag","onSizeChanged")
     }
 
     override fun onDraw(canvas: Canvas?) {
         canvas?.drawBitmap(resultBm, viewRect, viewRect, null)
+        Log.e("tag","onDraw")
+    }
+
+//    override fun setImageDrawable(drawable: Drawable?) {
+//        super.setImageDrawable(drawable)
+//        prepareBitmaps(width, height)
+//        Log.e("tag","setImageDrawable")
+//    }
+
+    override fun setImageURI(uri: Uri?) {
+        super.setImageURI(uri)
+        prepareBitmaps(width, height)
+        Log.e("tag","setImageURI")
     }
 
     private fun prepareBitmaps(w: Int, h:Int) {
@@ -65,6 +80,7 @@ class AvatarImageViewMask @JvmOverloads constructor(
 
         resultCanvas.drawBitmap(maskBm, viewRect, viewRect, null)
         resultCanvas.drawBitmap(srcBm, viewRect, viewRect, maskPaint)
+        Log.e("tag","prepareBitmaps")
     }
 
 //    private fun setup() {

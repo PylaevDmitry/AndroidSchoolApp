@@ -32,6 +32,7 @@ import android.graphics.Bitmap
 
 import android.R.attr.data
 import android.content.Context
+import android.graphics.drawable.Drawable
 
 
 class AuthFragment:BaseFragment<AuthViewModel>() {
@@ -76,7 +77,7 @@ class AuthFragment:BaseFragment<AuthViewModel>() {
         recyclerView.adapter = CourseAdapter(list) {
             val sendIntent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_TEXT, "This is my text to send.")
+                putExtra(Intent.EXTRA_TEXT, "Мой профиль на Profsoft.pro")
                 type = "text/plain"
             }
 
@@ -91,7 +92,13 @@ class AuthFragment:BaseFragment<AuthViewModel>() {
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE){
 //            val bitmap = MediaStore.Images.Media.getBitmap(context?.contentResolver, data?.data)
 //            photoImageView.setImageBitmap(bitmap)
+
+//            val inputStream = data?.data?.let { activity?.contentResolver?.openInputStream(it) }
+//            val drawable = Drawable.createFromStream(inputStream, data?.data.toString())
+//            photoImageView.setImageDrawable(drawable)
+
             photoImageView.setImageURI(data?.data)
+
         }
     }
 
