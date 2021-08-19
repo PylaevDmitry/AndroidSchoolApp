@@ -1,4 +1,4 @@
-package ru.profsoft.testappschool
+package ru.profsoft.testappschool.extentions
 
 import android.text.Editable
 

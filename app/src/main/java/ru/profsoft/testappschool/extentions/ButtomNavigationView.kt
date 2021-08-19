@@ -1,8 +1,9 @@
-package ru.profsoft.testappschool
+package ru.profsoft.testappschool.extentions
 
 import androidx.core.view.iterator
 import androidx.navigation.NavDestination
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import ru.profsoft.testappschool.R
 
 
 fun BottomNavigationView.selectDestination(destination: NavDestination) {

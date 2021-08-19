@@ -9,9 +9,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import kotlinx.android.synthetic.main.main_activity.*
 import ru.profsoft.testappschool.R
 import ru.profsoft.testappschool.app.App
-import ru.profsoft.testappschool.selectDestination
+import ru.profsoft.testappschool.extentions.selectDestination
 import ru.profsoft.testappschool.ui.base.BaseActivity
-import ru.profsoft.testappschool.ui.main.MainFragment
 import ru.profsoft.testappschool.viewModel.MainViewModel
 import ru.profsoft.testappschool.viewModel.MainViewModelFactory
 import ru.profsoft.testappschool.viewModel.base.IViewModelState

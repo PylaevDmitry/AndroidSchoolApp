@@ -11,7 +11,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.profsoft.testappschool.BuildConfig
 import ru.profsoft.testappschool.data.nework.AuthApi
-import ru.profsoft.testappschool.data.nework.ProfileApi
+import ru.profsoft.testappschool.data.nework.UserApi
 import ru.profsoft.testappschool.data.nework.interceptors.TokenInterceptor
 import ru.profsoft.testappschool.data.storage.Pref
 import timber.log.Timber
@@ -83,8 +83,8 @@ class NetworkModule {
             .build()
 
     @Provides
-    fun provideProfileApi(@Named(AUTH_RETROFIT) retrofit: Retrofit): ProfileApi =
-        retrofit.create(ProfileApi::class.java)
+    fun provideProfileApi(@Named(AUTH_RETROFIT) retrofit: Retrofit): UserApi =
+        retrofit.create(UserApi::class.java)
 
     companion object {
         private const val WITHOUT_AUTH_CLIENT = "without_auth_client"

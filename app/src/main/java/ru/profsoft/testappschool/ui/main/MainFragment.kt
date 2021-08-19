@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.auth_fragment.*
 import kotlinx.android.synthetic.main.main_fragment.*
 import ru.profsoft.testappschool.R
 import ru.profsoft.testappschool.app.App
-import ru.profsoft.testappschool.formatIsCorrect
+import ru.profsoft.testappschool.extentions.formatIsCorrect
 import ru.profsoft.testappschool.ui.auth.ForgotPasswordDialogFragment
 import ru.profsoft.testappschool.ui.base.BaseFragment
 import ru.profsoft.testappschool.viewModel.HomeViewModel

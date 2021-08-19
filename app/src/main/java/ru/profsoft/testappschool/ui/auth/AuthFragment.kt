@@ -1,10 +1,7 @@
 package ru.profsoft.testappschool.ui.auth
 
-import android.R.attr
 import android.app.Activity
 import android.content.Intent
-import android.net.Uri
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +11,7 @@ import kotlinx.android.synthetic.main.item_course.view.*
 import kotlinx.android.synthetic.main.main_fragment.*
 import ru.profsoft.testappschool.R
 import ru.profsoft.testappschool.app.App
-import ru.profsoft.testappschool.app.visible
+import ru.profsoft.testappschool.extentions.visible
 import ru.profsoft.testappschool.data.model.Course
 import ru.profsoft.testappschool.ui.base.BaseFragment
 import ru.profsoft.testappschool.ui.main.CourseAdapter
@@ -22,17 +19,6 @@ import ru.profsoft.testappschool.viewModel.AuthViewModel
 import ru.profsoft.testappschool.viewModel.AuthViewModelFactory
 import ru.profsoft.testappschool.viewModel.base.SavedStateViewModelFactory
 import javax.inject.Inject
-import android.provider.MediaStore
-
-import android.R.attr.bitmap
-import android.content.ContentResolver
-import android.graphics.drawable.BitmapDrawable
-import java.io.IOException
-import android.graphics.Bitmap
-
-import android.R.attr.data
-import android.content.Context
-import android.graphics.drawable.Drawable
 
 
 class AuthFragment:BaseFragment<AuthViewModel>() {

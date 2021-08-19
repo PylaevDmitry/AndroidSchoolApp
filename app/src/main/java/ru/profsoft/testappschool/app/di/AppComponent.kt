@@ -7,6 +7,7 @@ import ru.profsoft.testappschool.app.App
 import ru.profsoft.testappschool.app.di.module.AppModule
 import ru.profsoft.testappschool.app.di.module.NetworkModule
 import ru.profsoft.testappschool.app.di.module.PreferenceModule
+import ru.profsoft.testappschool.app.di.module.RepositoryModule
 import ru.profsoft.testappschool.ui.MainActivity
 import ru.profsoft.testappschool.ui.auth.AuthFragment
 import ru.profsoft.testappschool.ui.auth.AuthMainFragment
@@ -19,7 +20,8 @@ import javax.inject.Singleton
     modules = [
         AppModule::class,
         NetworkModule::class,
-        PreferenceModule::class
+        PreferenceModule::class,
+        RepositoryModule::class
     ]
 )
 

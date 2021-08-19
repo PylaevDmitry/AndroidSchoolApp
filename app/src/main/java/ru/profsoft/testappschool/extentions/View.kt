@@ -1,4 +1,4 @@
-package ru.profsoft.testappschool.app
+package ru.profsoft.testappschool.extentions
 
 import android.view.View
 import androidx.core.view.isVisible
