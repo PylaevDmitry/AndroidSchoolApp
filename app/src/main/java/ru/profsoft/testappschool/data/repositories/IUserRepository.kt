@@ -1,13 +1,12 @@
 package ru.profsoft.testappschool.data.repositories
 
-import ru.profsoft.testappschool.data.local.entity.User
-
+import ru.profsoft.testappschool.data.local.entity.Course
 
 interface IUserRepository {
 
-    suspend fun getUsersFromDatabase():List<User>
+    suspend fun getCoursesFromDatabase():List<Course>
 
-    suspend fun loadUsersFromNetwork():List<User>
+    suspend fun loadCoursesFromNetwork():List<Course>
 
-    suspend fun insertUsers(users:List<User>)
+    suspend fun insertCourses(courses:List<Course>)
 }

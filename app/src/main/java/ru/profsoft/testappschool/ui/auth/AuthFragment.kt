@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.main_fragment.*
 import ru.profsoft.testappschool.R
 import ru.profsoft.testappschool.app.App
 import ru.profsoft.testappschool.extentions.visible
-import ru.profsoft.testappschool.data.model.Course
+import ru.profsoft.testappschool.data.model.CourseRequest
 import ru.profsoft.testappschool.ui.base.BaseFragment
 import ru.profsoft.testappschool.ui.main.CourseAdapter
 import ru.profsoft.testappschool.viewModel.AuthViewModel
@@ -50,11 +50,11 @@ class AuthFragment:BaseFragment<AuthViewModel>() {
             openGalleryForImage()
         }
 
-        val course1 = Course("№0809-33434-233", "Design1", "очная", "01.07-01.09", "Создание макетов", "Щелкунова Юлия Сергеевна", "im")
-        val course2 = Course("№0809-33434-233", "Design2", "очная", "01.07-01.09", "Создание 2 макетов", "Щелкунова Юлия Сергеевна", "im")
-        val course3 = Course("№455-33434-233", "Design3", "заочная", "01.07-01.09", "Создание 3 макетов", "Щелкунова Юлия Сергеевна", "im")
-        val course4 = Course("№065609-33434-233", "Design and UX", "очная", "01.07-01.09", "Создание 4 макетов", "Щелкунова Юлия Сергеевна", "im")
-        val course5 = Course("№3466-33434", "Android", "очная", "01.07-01.09", "Создание android-приложения", "Щелкунова Юлия Сергеевна", "im")
+        val course1 = CourseRequest("№0809-33434-233", "Design1", "очная", "01.07-01.09", "Создание макетов", "Щелкунова Юлия Сергеевна", "im")
+        val course2 = CourseRequest("№0809-33434-233", "Design2", "очная", "01.07-01.09", "Создание 2 макетов", "Щелкунова Юлия Сергеевна", "im")
+        val course3 = CourseRequest("№455-33434-233", "Design3", "заочная", "01.07-01.09", "Создание 3 макетов", "Щелкунова Юлия Сергеевна", "im")
+        val course4 = CourseRequest("№065609-33434-233", "Design and UX", "очная", "01.07-01.09", "Создание 4 макетов", "Щелкунова Юлия Сергеевна", "im")
+        val course5 = CourseRequest("№3466-33434", "Android", "очная", "01.07-01.09", "Создание android-приложения", "Щелкунова Юлия Сергеевна", "im")
 
         val list = listOf(course1, course2, course3, course4, course5)
 

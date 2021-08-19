@@ -2,7 +2,7 @@ package ru.profsoft.testappschool.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Course (
+data class CourseRequest (
     @SerializedName ("certNum")
     val certNum:String,
     @SerializedName ("courseName")
