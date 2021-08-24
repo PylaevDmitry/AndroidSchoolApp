@@ -6,6 +6,6 @@ import retrofit2.http.Query
 interface AuthApi {
 
     @POST("/login")
-    fun login(@Query("login") name: String, @Query("password") password:Int)
+    suspend fun login(@Query("login") name: String, @Query("password") password:Int)
 
 }

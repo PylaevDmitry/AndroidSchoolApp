@@ -5,7 +5,6 @@ import ru.profsoft.testappschool.data.local.entity.Course
 import ru.profsoft.testappschool.data.nework.CourseApi
 import ru.profsoft.testappschool.extentions.toCourse
 
-
 class UserRepository(
     private val userApi: CourseApi,
     private val usersDatabase: CourseDatabase

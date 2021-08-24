@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_course.view.*
 import ru.profsoft.testappschool.R
 import ru.profsoft.testappschool.extentions.visible
-import ru.profsoft.testappschool.data.model.CourseRequest
+import ru.profsoft.testappschool.data.model.db.CourseRequest
 
 class CourseAdapter(val cours:List<CourseRequest>, val clickListener:()->Unit):RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
     override fun onCreateViewHolder(parent:ViewGroup, viewType:Int): CourseAdapter.CourseViewHolder {

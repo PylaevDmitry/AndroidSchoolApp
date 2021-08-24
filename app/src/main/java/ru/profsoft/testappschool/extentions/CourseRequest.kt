@@ -1,7 +1,7 @@
 package ru.profsoft.testappschool.extentions
 
 import ru.profsoft.testappschool.data.local.entity.Course
-import ru.profsoft.testappschool.data.model.CourseRequest
+import ru.profsoft.testappschool.data.model.db.CourseRequest
 
 
 fun CourseRequest.toCourse(): Course = Course(

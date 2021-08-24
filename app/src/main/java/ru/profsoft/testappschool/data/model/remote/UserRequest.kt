@@ -1,4 +1,4 @@
-package ru.profsoft.testappschool.data.model
+package ru.profsoft.testappschool.data.model.remote
 
 data class UserRequest(
     val login:String,

@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.main_fragment.*
 import ru.profsoft.testappschool.R
 import ru.profsoft.testappschool.app.App
 import ru.profsoft.testappschool.extentions.visible
-import ru.profsoft.testappschool.data.model.CourseRequest
+import ru.profsoft.testappschool.data.model.db.CourseRequest
 import ru.profsoft.testappschool.ui.base.BaseFragment
 import ru.profsoft.testappschool.ui.main.CourseAdapter
 import ru.profsoft.testappschool.viewModel.AuthViewModel

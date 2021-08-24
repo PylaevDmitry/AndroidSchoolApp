@@ -1,4 +1,4 @@
-package ru.profsoft.testappschool.data.model
+package ru.profsoft.testappschool.data.model.db
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
