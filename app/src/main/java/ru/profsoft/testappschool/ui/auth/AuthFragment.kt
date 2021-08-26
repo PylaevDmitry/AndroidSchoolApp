@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.auth_fragment.*
 import kotlinx.android.synthetic.main.item_course.*
 import kotlinx.android.synthetic.main.item_course.view.*
@@ -35,6 +36,13 @@ class AuthFragment:BaseFragment<AuthViewModel>() {
     override val layout: Int = R.layout.auth_fragment
 
     override fun setupViews() {
+
+        viewModel.getUser()
+
+        viewModel.observeUsers(viewLifecycleOwner) { courses ->
+
+
+        }
 
         emailTextView.text = arguments?.getString("email")
 
@@ -83,7 +91,8 @@ class AuthFragment:BaseFragment<AuthViewModel>() {
 //            val drawable = Drawable.createFromStream(inputStream, data?.data.toString())
 //            photoImageView.setImageDrawable(drawable)
 
-            photoImageView.setImageURI(data?.data)
+            Glide.with(requireContext()).load(data?.data).into(photoImageView)
+//            photoImageView.setImageURI(data?.data)
 
         }
     }
