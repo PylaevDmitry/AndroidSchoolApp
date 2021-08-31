@@ -22,20 +22,20 @@ class AvatarImageViewMask @JvmOverloads constructor(
     private lateinit var maskBm: Bitmap
     private lateinit var srcBm: Bitmap
 
-//    companion object {
-//        private const val DEFAULT_SIZE = 150
-//    }
-//
-//    init {
-//        scaleType = ScaleType.CENTER_CROP
-//        setup()
-//    }
-//
-//    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-//        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-//        val initSize = resolveDefaultSize(widthMeasureSpec)
-//        setMeasuredDimension(initSize, initSize)
-//    }
+    companion object {
+        private const val DEFAULT_SIZE = 150
+    }
+
+    init {
+        scaleType = ScaleType.CENTER_CROP
+        setup()
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        val initSize = resolveDefaultSize(widthMeasureSpec)
+        setMeasuredDimension(initSize, initSize)
+    }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
@@ -83,26 +83,26 @@ class AvatarImageViewMask @JvmOverloads constructor(
         Log.e("tag","prepareBitmaps")
     }
 
-//    private fun setup() {
-//        with(maskPaint) {
-//            color = Color.RED
-//            style = Paint.Style.FILL
-//        }
-//    }
-//
-//    private fun resolveDefaultSize(spec: Int): Int {
-//        return when (MeasureSpec.getMode((spec))) {
-//            MeasureSpec.UNSPECIFIED -> {
-//                context.dpToPx(DEFAULT_SIZE).toInt()
-//            }
-//            MeasureSpec.AT_MOST -> {
-//                MeasureSpec.getSize(spec)
-//            }
-//            MeasureSpec.EXACTLY -> {
-//                MeasureSpec.getSize(spec)
-//            }
-//            else -> MeasureSpec.getSize(spec)
-//        }
-//    }
+    private fun setup() {
+        with(maskPaint) {
+            color = Color.RED
+            style = Paint.Style.FILL
+        }
+    }
+
+    private fun resolveDefaultSize(spec: Int): Int {
+        return when (MeasureSpec.getMode((spec))) {
+            MeasureSpec.UNSPECIFIED -> {
+                context.dpToPx(DEFAULT_SIZE).toInt()
+            }
+            MeasureSpec.AT_MOST -> {
+                MeasureSpec.getSize(spec)
+            }
+            MeasureSpec.EXACTLY -> {
+                MeasureSpec.getSize(spec)
+            }
+            else -> MeasureSpec.getSize(spec)
+        }
+    }
 
 }

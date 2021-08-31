@@ -6,23 +6,23 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_course.view.*
 import ru.profsoft.testappschool.R
+import ru.profsoft.testappschool.data.local.entity.Course
 import ru.profsoft.testappschool.extentions.visible
-import ru.profsoft.testappschool.data.model.db.CourseRequest
 
-class CourseAdapter(val cours:List<CourseRequest>, val clickListener:()->Unit):RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
+class CourseAdapter(val courses:List<Course>, val clickListener:()->Unit):RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
     override fun onCreateViewHolder(parent:ViewGroup, viewType:Int): CourseAdapter.CourseViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_course, parent, false)
         return CourseViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: CourseAdapter.CourseViewHolder, position: Int) {
-        holder.bind(cours[position])
+        holder.bind(courses[position])
     }
 
-    override fun getItemCount():Int = cours.size
+    override fun getItemCount():Int = courses.size
 
     inner class CourseViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind (item: CourseRequest) {
+        fun bind (item: Course) {
             itemView.certNumTextView.text = item.certNum
             itemView.courseTextView.text = item.courseName
             itemView.formTextView.text = item.form

@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_12dp"
-        android:text="Номер сертификата:"
+        android:text="@string/cert_code"
         />
 
     <TextView
@@ -19,7 +19,7 @@
         android:autofillHints="certNumTextView"
         android:backgroundTint="@android:color/transparent"
         android:gravity="start|top"
-        android:text="certNumTextView"
+        android:text="@string/default_cert_code"
         android:textColor="@color/black"
         android:textStyle="bold"
          />
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_12dp"
-        android:text="Направление подготовки:"
+        android:text="@string/course_name"
         />
 
     <TextView
@@ -39,7 +39,7 @@
         android:autofillHints="courseNameTextView"
         android:backgroundTint="@android:color/transparent"
         android:gravity="start|top"
-        android:text="courseTextView"
+        android:text="@string/default_course_name"
         android:textColor="@color/black"
         android:textStyle="bold"
         />
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_12dp"
-        android:text="Форма обучения:"
+        android:text="@string/education_form"
         />
 
     <TextView
@@ -59,7 +59,7 @@
         android:autofillHints="formTextView"
         android:backgroundTint="@android:color/transparent"
         android:gravity="start|top"
-        android:text="formTextView"
+        android:text="@string/default_education_form"
         android:textColor="@color/black"
         android:textStyle="bold"
         />
@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_12dp"
-        android:text="Период обучения:"
+        android:text="@string/period"
         />
 
     <TextView
@@ -79,7 +79,7 @@
         android:autofillHints="periodTextView"
         android:backgroundTint="@android:color/transparent"
         android:gravity="start|top"
-        android:text="periodTextView"
+        android:text="@string/default_period"
         android:textColor="@color/black"
         android:textStyle="bold"
         />
@@ -98,7 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_12dp"
-        android:text="Изучение:"
+        android:text="@string/content"
         android:visibility="gone"
         />
 
@@ -110,7 +110,7 @@
         android:autofillHints="contentTextView"
         android:backgroundTint="@android:color/transparent"
         android:gravity="start|top"
-        android:text="contentTextView"
+        android:text="@string/default_content"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:visibility="gone"
@@ -121,7 +121,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_12dp"
-        android:text="Преподаватель:"
+        android:text="@string/teacher"
         android:visibility="gone"
         />
 
@@ -133,7 +133,7 @@
         android:autofillHints="teacherTextView"
         android:backgroundTint="@android:color/transparent"
         android:gravity="start|top"
-        android:text="teacherTextView"
+        android:text="@string/default_teacher"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:visibility="gone"

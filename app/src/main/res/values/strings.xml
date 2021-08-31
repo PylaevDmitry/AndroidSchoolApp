@@ -5,4 +5,20 @@
     <string name="hint_password">Пароль</string>
     <string name="alert_dialog_button">Забыли пароль?</string>
     <string name="share"><u>ПОДЕЛИТЬСЯ</u></string>
+    <string name="my_courses">МОИ КУРСЫ</string>
+    <string name="default_user_name">usernameEditTextView</string>
+    <string name="default_email">emailTextView</string>
+    <string name="cert_code">Номер сертификата:</string>
+    <string name="default_cert_code">certNumTextView</string>
+    <string name="course_name">Направление подготовки:</string>
+    <string name="default_course_name">courseTextView</string>
+    <string name="education_form">Форма обучения:</string>
+    <string name="default_education_form">formTextView</string>
+    <string name="period">Период обучения:</string>
+    <string name="default_period">periodTextView</string>
+    <string name="content">Изучение:</string>
+    <string name="default_content">contentTextView</string>
+    <string name="teacher">Преподаватель:</string>
+    <string name="default_teacher">teacherTextView</string>
+    <string name="search_fragment_content">search_fragment</string>
 </resources>

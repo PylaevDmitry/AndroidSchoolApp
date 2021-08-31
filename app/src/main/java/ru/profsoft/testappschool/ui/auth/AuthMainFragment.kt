@@ -3,12 +3,10 @@ package ru.profsoft.testappschool.ui.auth
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.auth_main_fragment.*
 import ru.profsoft.testappschool.R
 import ru.profsoft.testappschool.app.App
 import ru.profsoft.testappschool.databinding.AuthMainFragmentBinding
-import ru.profsoft.testappschool.databinding.MainFragmentBinding
 import ru.profsoft.testappschool.ui.base.BaseFragment
 import ru.profsoft.testappschool.viewModel.AuthViewModel
 import ru.profsoft.testappschool.viewModel.AuthViewModelFactory
@@ -40,12 +38,10 @@ class AuthMainFragment : BaseFragment<AuthViewModel>() {
     override fun setupViews() {
         buttonEnter1.setOnClickListener {
             viewModel.navigateToMainFragment()
-            //findNavController().navigate(R.id.action_authMainFragment_to_authFragment)
         }
 
         buttonEnter2.setOnClickListener {
             viewModel.navigateToAuthFragment()
-            //findNavController().navigate(R.id.action_authMainFragment_to_authFragment)
         }
     }
 }
