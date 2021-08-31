@@ -37,9 +37,9 @@ class AuthFragment:BaseFragment<AuthViewModel>() {
 
     override fun setupViews() {
 
-        viewModel.getUser()
+        viewModel.getCourses()
 
-        viewModel.observeUsers(viewLifecycleOwner) { courses ->
+        viewModel.observeCourses(viewLifecycleOwner) { courses ->
 
 
         }

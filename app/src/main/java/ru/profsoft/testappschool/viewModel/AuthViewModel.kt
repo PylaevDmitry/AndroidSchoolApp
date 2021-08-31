@@ -23,7 +23,7 @@ class AuthViewModel(
 
     private val usersLiveData:MutableLiveData<List<Course>> by lazy { MutableLiveData<List<Course>>() }
 
-    fun observeUsers(owner:LifecycleOwner, onChange: (List<Course>) -> Unit) {
+    fun observeCourses(owner:LifecycleOwner, onChange: (List<Course>) -> Unit) {
         usersLiveData.observe(owner, Observer {onChange(it)})
     }
 
@@ -44,9 +44,6 @@ class AuthViewModel(
         }
     }
 
-//    fun navigateBack() {
-//        navigate(NavigationCommand.Back())
-//    }
 }
 
 class AuthViewModelFactory @Inject constructor(private val repository:IUserRepository) : IViewModelFactory<AuthViewModel> {
